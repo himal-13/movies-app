@@ -9,7 +9,7 @@ interface MovieType {
 
 }
 
-const PopularMovi = ({movie}:MovieType) => {
+const SliderMovi = ({movie}:MovieType) => {
 
   const {addFavorite,isFavorite,removeFavorite}= useFavorites();
 
@@ -50,4 +50,4 @@ const PopularMovi = ({movie}:MovieType) => {
   )
 }
 
-export default PopularMovi
+export default SliderMovi

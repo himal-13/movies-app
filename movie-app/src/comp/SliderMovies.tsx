@@ -2,15 +2,15 @@ import { faAngleLeft, faAngleRight} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { Movie } from "../App";
-import PopularMovi from "./PopularMovi";
+import SliderMovi from "./SliderMovi";
 
 
-type PopularMoviesProps = {
+type SliderMoviesProps = {
   movies: Movie[];
   text:string
 };
 
-const PopularMovies = ({ movies,text }: PopularMoviesProps) => {
+const SliderMovies = ({ movies,text }: SliderMoviesProps) => {
   const [currentMoviesSliderIndex, setCurrentMoviesIndex] = useState(0);
   
   
@@ -54,11 +54,11 @@ const PopularMovies = ({ movies,text }: PopularMoviesProps) => {
         }}
       >
         {movies.map((movie) => (
-        <PopularMovi movie={movie} key={movie.id}/>
+        <SliderMovi movie={movie} key={movie.id}/>
         ))}
       </div>
     </div>
   );
 };
 
-export default PopularMovies;
+export default SliderMovies;

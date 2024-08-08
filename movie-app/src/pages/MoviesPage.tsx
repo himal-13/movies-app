@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import NavBar from "../comp/NavBar"
 import { faFilm } from "@fortawesome/free-solid-svg-icons"
-import PopularMovies from "../comp/PopularMovies"
+import SliderMovies from "../comp/SliderMovies"
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Movie } from "../App";
@@ -50,8 +50,8 @@ const MoviesPage = () => {
       <h1 className="text-4xl md:text-6xl py-2 md:py-6 "><span>Movies</span>  <FontAwesomeIcon icon={faFilm}/></h1>
       <hr /><hr />
       <div className="">
-        <PopularMovies text="For You" movies={movies}/>
-        <PopularMovies text="crime" movies={crimeMovies}/>
+        <SliderMovies text="For You" movies={movies}/>
+        <SliderMovies text="crime" movies={crimeMovies}/>
       </div>
     </main>
     </div>

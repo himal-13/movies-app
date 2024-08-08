@@ -5,7 +5,7 @@ import NavBar from './comp/NavBar'
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import PopularMovies from './comp/PopularMovies';
+import SliderMovies from './comp/SliderMovies';
 
 export interface Genre {
   id: number;
@@ -111,8 +111,8 @@ function App() {
     </div>
     </div>
     <div className="mt-16"></div>
-      <PopularMovies movies={movies} text='Upcoming'/>
-      <PopularMovies movies={upComingMovies} text='Popular'/>
+      <SliderMovies movies={movies} text='Upcoming'/>
+      <SliderMovies movies={upComingMovies} text='Popular'/>
 
     </main>
 

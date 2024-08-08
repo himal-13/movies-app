@@ -1,14 +1,23 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 import { Movie } from "../App";
 
-interface FavrioteContextType{
-    favorites:Movie[],
-    history:Movie[],
-    addFavorite:(movie:Movie)=>void,
-    removeFavorite:(movieId:number)=>void,
-    isFavorite:(movieId:number)=>boolean,
-    addHistory:(movie:Movie)=>void,
-    removeFromHistory:(movieId:number)=>void,
+interface RatedMovie  {
+  movie:Movie,
+  rate: number;
+  review: string;
+}
+
+interface FavrioteContextType  {
+  favorites: Movie[];
+  history: Movie[];
+  ratedMovies: RatedMovie[];
+  addFavorite: (movie: Movie) => void;
+  removeFavorite: (movieId: number) => void;
+  isFavorite: (movieId: number) => boolean;
+  addHistory: (movie: Movie) => void;
+  removeFromHistory: (movieId: number) => void;
+  addRating: (movie: RatedMovie) => void;
+  removeRating: (movieId: number) => void;
 }
 
 
@@ -22,7 +31,7 @@ interface FavoritesProviderProps {
 const FavoriteProvider:React.FC<FavoritesProviderProps>  = ({children}) => {
     const [favorites, setFavorites] = useState<Movie[]>([]);
     const [history, setHistory] = useState<Movie[]>([]);
-
+    const [ratedMovies, setRatedMovies] = useState<RatedMovie[]>([]);
 
 
     const addFavorite = (movie: Movie) => {
@@ -46,13 +55,23 @@ const FavoriteProvider:React.FC<FavoritesProviderProps>  = ({children}) => {
         return [...prevHistory, movie];
       });
     };
+
   
     const removeFromHistory = (movieId: number): void => {
       setHistory(prevHistory => prevHistory.filter(movie => movie.id !== movieId));
     };
 
+    const addRating = (movie: RatedMovie): void => {
+      setRatedMovies([...ratedMovies,movie])
+   
+    };
+
+    const removeRating = (movieId: number): void => {
+      setRatedMovies(prevRatedMovies => prevRatedMovies.filter(movie => movie.movie.id !== movieId));
+    };
+
     return (
-      <favoriteContext.Provider value={{ favorites, addFavorite, removeFavorite, isFavorite,addHistory,removeFromHistory,history }}>
+      <favoriteContext.Provider value={{ favorites, addFavorite, ratedMovies, removeFavorite, isFavorite,addHistory,removeFromHistory,history,addRating,removeRating }}>
         {children}
       </favoriteContext.Provider>
     );

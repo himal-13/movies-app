@@ -1,19 +1,4 @@
-// import { faSearch } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { useState } from "react"
 
-// const Search = () => {
-//     const[userInput,setUserInput] = useState('')
-//   return (
-//     <div >
-//         <input type="input" placeholder="search" value={userInput} onChange={(e)=>setUserInput(e.target.value)}   />
-//         <FontAwesomeIcon icon={faSearch} className="p-2 bg-slate-200 cursor-pointer h-6 rounded-lg"/>
-
-//     </div>
-//   )
-// }
-
-// export default Search;
 
 
 import  { useState, useEffect, useRef } from 'react';
@@ -88,7 +73,7 @@ const Search = () => {
         value={query}
         onChange={handleInputChange}
         placeholder="Search for movies..."
-        className=" sm:px-10 py-2 border-2 border-gray-500 rounded-2xl "
+        className=" m-2 px-4 sm:px-10 py-2 border-2 border-gray-500 rounded-xl sm:rounded-2xl "
       />
       {isFocused && <ul className={`w-2/3 absolute top-20 left-1/2 -translate-x-1/2 bg-slate-100 rounded-md border-2  max-h-screen overflow-y-scroll search-results`}>
         {suggestions.length>0? suggestions.map((movie) => (
