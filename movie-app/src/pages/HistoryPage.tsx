@@ -11,10 +11,9 @@ const HistoryPage = () => {
   return (
     <div className="container">
         <NavBar/>
-        <main>
-            <div className="mt-20 w-full sm:w-3/4 mx-auto">
-                <h1 className="text-3xl my-4"><span>Watch History</span>  <FontAwesomeIcon icon={faHistory}/></h1>
-                <hr /><hr />
+        <main >
+            <div className="mt-28 w-full sm:w-3/4 mx-auto sm:2xl:mt-24">
+                <h1 className="text-4xl sm:text-5xl py-4 border-b-2 border-gray-200"><span>Watch History</span>  <FontAwesomeIcon icon={faHistory}/></h1>
                 <div className="w-full">
                   {history.length>0 ?(
                     <section className="w-full h-screen">

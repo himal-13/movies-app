@@ -37,7 +37,7 @@ const TrendingPage = () => {
     <div className="container">
     <NavBar/>
     <main>
-        <div className="mt-20 trending-main">
+        <div className="mt-24 trending-main">
         <h1 className=" text-4xl md:text-6xl py-2 md:py-6 "><FontAwesomeIcon icon={faFire}/>  <span>Trending</span></h1>
     <ul className="flex gap-4 sm:gap-6">
             <li className={`py-4 cursor-pointer ${activeGenre=="action"?'border-b-4 border-gray-700':''}`} onClick={()=>{setActiveGenre('action'); getMoviesByGenre(28)}}>Action</li>

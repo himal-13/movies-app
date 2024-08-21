@@ -69,7 +69,6 @@ function App() {
 
     }
     fetchMovies();
-    console.log(movies)
 
   }, []);
 

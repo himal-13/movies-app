@@ -67,7 +67,7 @@ const FavoriteProvider:React.FC<FavoritesProviderProps>  = ({children}) => {
     };
 
     const removeRating = (movieId: number): void => {
-      setRatedMovies(prevRatedMovies => prevRatedMovies.filter(movie => movie.movie.id !== movieId));
+      setRatedMovies(prevRatedMovies => prevRatedMovies.filter(list => list.movie.id !== movieId));
     };
 
     return (

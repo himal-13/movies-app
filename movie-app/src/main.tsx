@@ -9,6 +9,7 @@ import ErrorPage from './pages/ErrorPage.tsx';
 import HistoryPage from './pages/HistoryPage.tsx';
 import Movie from './pages/Movie.tsx';
 import FavoriteProvider from './services/context.tsx';
+import RateReviewPage from './pages/RateReviewPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -28,9 +29,6 @@ const router = createBrowserRouter([
     errorElement:<ErrorPage/>
 
   },
-
-
-
   {
     path:'/history',
     element:<HistoryPage/>,
@@ -38,7 +36,13 @@ const router = createBrowserRouter([
   },
   {
     path:'/movie/:movieId',
-    element:<Movie/>
+    element:<Movie/>,
+    errorElement:<ErrorPage/>
+  },
+  {
+    path:'/ratedmovies',
+    errorElement:<ErrorPage/>,
+    element:<RateReviewPage/>
   }
 
 

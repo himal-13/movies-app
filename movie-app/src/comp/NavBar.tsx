@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars,faChevronRight,faClockRotateLeft,faFire,faHeart,faHome, } from "@fortawesome/free-solid-svg-icons";
+import { faBars,faChevronRight,faClockRotateLeft,faFire,faHeart,faHome, faStar, } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import './Navbar.css';
 import Search from "./Search";
@@ -43,6 +43,8 @@ const NavBar = () => {
             <ul>
                 <NavLink to='/history' className={({ isActive }) => (isActive ? 'active-nav' : '')}><li ><FontAwesomeIcon icon={faClockRotateLeft}/><span>History</span></li></NavLink>
                 <NavLink className={({ isActive }) => (isActive ? 'active-nav' : '')}  to='/favoritesmovies'><li ><FontAwesomeIcon icon={faHeart} /><span>Favorite</span></li></NavLink>
+                <NavLink className={({ isActive }) => (isActive ? 'active-nav' : '')}  to='/ratedmovies'><li ><FontAwesomeIcon icon={faStar} /><span>Rated</span></li></NavLink>
+
             </ul>
         </section>
      
