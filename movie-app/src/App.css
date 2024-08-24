@@ -90,6 +90,9 @@ main{
   .popular-movies-div h1{
     font-size: 2rem;
   }
+  .p-movie{
+    width: 33%;
+  }
 
   .p-movie img{
     height: 60%;
