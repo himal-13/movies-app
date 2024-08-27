@@ -75,11 +75,11 @@ const Search = () => {
         placeholder="Search for movies..."
         className=" m-2 px-4 sm:px-10 py-2 border-2 border-gray-500 rounded-xl sm:rounded-2xl "
       />
-      {isFocused && <ul className={`w-2/3 absolute top-20 left-1/2 -translate-x-1/2 bg-slate-100 rounded-md border-2  max-h-screen overflow-y-scroll search-results`}>
+      {isFocused && <ul className={`w-2/3 absolute sm:top-20 top-30 left-1/2 -translate-x-1/2 bg-slate-100 rounded-md border-2  max-h-screen overflow-y-scroll search-results`}>
         {suggestions.length>0? suggestions.map((movie) => (
           <Link to={`/movie/${movie.id}`} onClick={()=>{setIsFocused(false)}}><li className='p-2 m-2 flex justify-between border-2' key={movie.id}>
             <span>{movie.title}</span>
-            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} width={40} height={60} alt="" />
+            {movie.poster_path?<img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} width={40} height={60} alt="" />:<></>}
           </li></Link>
         )):(
           <li className="h-auto m-2 overflow-hidden p-5 flex justify-center items-center">

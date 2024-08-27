@@ -168,5 +168,7 @@ nav{
     header{
       flex-direction: column;
     }
-    
+    nav{
+      top: 2rem;
+    }
   }
